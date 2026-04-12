@@ -84,11 +84,16 @@ Work through the sections below in order unless you are jumping back to review. 
 | `01-composition-vs-inheritance` | HAS-A (composition) vs IS-A (`extends`) | ✓ |
 | `02-practice` | Short exercise (`Laptop` + `DesignPracticeApp`; tasks in each `.java` header) | ✓ |
 
+### Error handling (`07-error-handling/`)
+
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `01-exception-basics` | `try` / `catch` / `finally`, runtime exceptions | ✓ |
+
 ### Supporting topics (same repo, later order)
 
 | Folder | Topic | Done |
 |--------|-------|:----:|
-| `07-error-handling` | Exceptions (`try` / `catch`) | |
 | `08-code-structure` | Packages | |
 
 ---
