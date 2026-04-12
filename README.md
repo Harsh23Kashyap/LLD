@@ -52,7 +52,7 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 
 | Module | Topics | Done |
 |--------|--------|:----:|
-| `02-interfaces` | `implements`, multiple interfaces | |
+| `02-interfaces` | `implements`, multiple interfaces | ✓ |
 | `03-collections` | List / `ArrayList`, Map / `HashMap`, Set / `HashSet` | |
 | `04-enums` | Fixed states / types | |
 | `05-access-control` | `private`, `public`, `protected` | |
