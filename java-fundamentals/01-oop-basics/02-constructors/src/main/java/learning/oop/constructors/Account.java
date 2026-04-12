@@ -1,27 +1,24 @@
 package learning.oop.constructors;
 
-/**
- * Constructors run after "new" and set up the object's starting state.
- * Several constructors can exist; one can call another with this(...).
- */
+// Constructor: runs on "new"; same name as the class, no return type; gives the object its first field values.
+
 public class Account {
 
+    // These fields are filled in by the constructors when the object is created.
     private final String id;
     private long balanceCents;
 
-    // No-arg constructor.
+    // No-arg constructor: for callers who have no id yet; forwards to another constructor so the real rules stay in one place.
     public Account() {
         this("UNKNOWN");
     }
 
-    // Starts balance at 0; forwards to Account(id, 0) so setup is not duplicated.
+    // Constructor overload: same class, different parameter list; this one forwards to the two-arg constructor so balance default (0) is defined once.
     public Account(String id) {
-        // this(id, 0L); or use and call this constructor inside this constructor.
-        this.id = id;
-        this.balanceCents = 0L;
+        this(id, 0L);
     }
 
-    // Full form: caller supplies id and opening balance.
+    // Constructor: primary form—caller supplies id and opening balance; this is where both fields are assigned for that path.
     public Account(String id, long balanceCents) {
         this.id = id;
         this.balanceCents = balanceCents;

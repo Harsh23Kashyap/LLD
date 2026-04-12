@@ -1,11 +1,14 @@
 package learning.oop.encapsulation;
 
-/** Reads and updates state only through Person's methods, not by touching fields. */
+// Encapsulation: you use Person only through its methods; its fields are not part of the public surface.
+
 public final class EncapsulationApp {
 
     private EncapsulationApp() {
     }
+
     public static void main(String[] args) {
+        // From here you only use Person's public methods; private fields are not accessible.
         Person p = new Person("Asha", 28);
         p.printSummary();
 
