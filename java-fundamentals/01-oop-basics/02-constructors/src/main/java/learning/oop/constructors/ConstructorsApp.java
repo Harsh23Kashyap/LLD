@@ -1,15 +1,10 @@
 package learning.oop.constructors;
 
-<<<<<<< HEAD
-// Each "new Account(...)" picks the constructor whose parameters match; that sets how the object starts out.
-
-=======
 /*
  * The three new Account(...) calls below differ only by their arguments. The compiler
  * chooses which constructor runs: none, (String id), or (String id, long balanceCents).
  * Same type, three entry points into construction.
  */
->>>>>>> 1cfe337 (──────────────────────────────)
 public final class ConstructorsApp {
 
     private ConstructorsApp() {
