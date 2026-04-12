@@ -82,6 +82,7 @@ Work through the sections below in order unless you are jumping back to review. 
 | Folder | Topic | Done |
 |--------|-------|:----:|
 | `01-composition-vs-inheritance` | HAS-A (composition) vs IS-A (`extends`) | ✓ |
+| `02-practice` | Short exercise (`Laptop` + `DesignPracticeApp`; tasks in each `.java` header) | ✓ |
 
 ### Supporting topics (same repo, later order)
 
