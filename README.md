@@ -45,7 +45,7 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 | `03-encapsulation` | Encapsulation | ✓ |
 | `04-inheritance` | Inheritance | ✓ |
 | `05-polymorphism` | Polymorphism | ✓ |
-| `06-abstraction` | Abstraction (`abstract`, `interface`) | |
+| `06-abstraction` | Abstraction (`abstract`, `interface`) | ✓ |
 
 **Other `java-fundamentals` modules**
 
@@ -58,6 +58,8 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 | `06-design-thinking` | Composition vs inheritance (HAS-A vs IS-A) | |
 | `07-error-handling` | `try` / `catch` basics | |
 | `08-code-structure` | Packages | |
+
+**`lld-course/`** — lesson exercises not started yet (directory layout only; no ✓ here until you add code per topic).
 
 ---
 
