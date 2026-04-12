@@ -1,7 +1,20 @@
 package learning.oop.encapsulation;
 
+<<<<<<< HEAD
 // Encapsulation: hide how data is stored and only allow changes through this class's methods, so rules stay in one place.
 
+=======
+/*
+ * Encapsulation
+ *
+ * Keep fields private so other classes cannot read or change them directly. Expose only
+ * the operations you want (getters, setters, or other methods). That keeps validation and
+ * future changes inside this class instead of spread across callers.
+ *
+ * Here, setAgeYears enforces a simple rule (age cannot be negative). The constructor calls
+ * setAgeYears so the same rule applies when the object is first created, not only on later updates.
+ */
+>>>>>>> 1cfe337 (──────────────────────────────)
 public class Person {
 
     // Encapsulation here: these fields are not visible outside; other code must use getters/setters instead of reading or assigning them directly.

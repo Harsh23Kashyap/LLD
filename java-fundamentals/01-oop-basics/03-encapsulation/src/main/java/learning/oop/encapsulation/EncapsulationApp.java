@@ -1,7 +1,16 @@
 package learning.oop.encapsulation;
 
+<<<<<<< HEAD
 // Encapsulation: you use Person only through its methods; its fields are not part of the public surface.
 
+=======
+/*
+ * This class only talks to Person through its public methods (constructor, setters,
+ * printSummary). Assigning to p.name or p.ageYears from here would not compile because
+ * those fields are private. A negative age in new Person(..., -20) would fail inside
+ * setAgeYears during construction.
+ */
+>>>>>>> 1cfe337 (──────────────────────────────)
 public final class EncapsulationApp {
 
     private EncapsulationApp() {
@@ -15,10 +24,5 @@ public final class EncapsulationApp {
         p.setName("Asha Rao");
         p.setAgeYears(29);
         p.printSummary();
-
-        // This would throw an exception:
-        // Person p2 = new Person("John Doe", -20);
-        // p2.printSummary();
-        // System.out.println();
     }
 }
