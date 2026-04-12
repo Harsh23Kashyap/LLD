@@ -69,6 +69,7 @@ Work through the sections below in order unless you are jumping back to review. 
 | Folder | Topic | Done |
 |--------|-------|:----:|
 | `01-enums` | Enum type, constants, fields, `values`, `valueOf`, `switch` | ✓ |
+| `02-practice` | Short exercise (`ChipColor` / `ChipPracticeApp`; tasks in each `.java` header) | ✓ |
 
 ### Supporting topics (same repo, later order)
 
