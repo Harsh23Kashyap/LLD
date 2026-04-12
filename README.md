@@ -34,16 +34,30 @@ Numbered modules; each **leaf** folder is one lesson.
 
 Study order follows folder numbering (OOP first, then interfaces, collections, and supporting topics).
 
-| Module | Topics |
-|--------|--------|
-| `01-oop-basics` | Classes & objects, constructors, encapsulation, inheritance, polymorphism, abstraction |
-| `02-interfaces` | `implements`, multiple interfaces |
-| `03-collections` | List / `ArrayList`, Map / `HashMap`, Set / `HashSet` |
-| `04-enums` | Fixed states / types |
-| `05-access-control` | `private`, `public`, `protected` |
-| `06-design-thinking` | Composition vs inheritance (HAS-A vs IS-A) |
-| `07-error-handling` | `try` / `catch` basics |
-| `08-code-structure` | Packages |
+### Progress
+
+**`01-oop-basics` (OOP)**
+
+| Lesson | Topic | Done |
+|--------|-------|:----:|
+| `01-classes-and-objects` | Classes & objects | ✓ |
+| `02-constructors` | Constructors | ✓ |
+| `03-encapsulation` | Encapsulation | ✓ |
+| `04-inheritance` | Inheritance | ✓ |
+| `05-polymorphism` | Polymorphism | ✓ |
+| `06-abstraction` | Abstraction (`abstract`, `interface`) | |
+
+**Other `java-fundamentals` modules**
+
+| Module | Topics | Done |
+|--------|--------|:----:|
+| `02-interfaces` | `implements`, multiple interfaces | |
+| `03-collections` | List / `ArrayList`, Map / `HashMap`, Set / `HashSet` | |
+| `04-enums` | Fixed states / types | |
+| `05-access-control` | `private`, `public`, `protected` | |
+| `06-design-thinking` | Composition vs inheritance (HAS-A vs IS-A) | |
+| `07-error-handling` | `try` / `catch` basics | |
+| `08-code-structure` | Packages | |
 
 ---
 
