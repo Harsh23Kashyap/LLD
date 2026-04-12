@@ -77,11 +77,16 @@ Work through the sections below in order unless you are jumping back to review. 
 |--------|-------|:----:|
 | `01-access-modifiers` | `private`, package-private, `protected`, `public` | ✓ |
 
+### Design thinking (`06-design-thinking/`)
+
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `01-composition-vs-inheritance` | HAS-A (composition) vs IS-A (`extends`) | ✓ |
+
 ### Supporting topics (same repo, later order)
 
 | Folder | Topic | Done |
 |--------|-------|:----:|
-| `06-design-thinking` | Composition vs inheritance | |
 | `07-error-handling` | Exceptions (`try` / `catch`) | |
 | `08-code-structure` | Packages | |
 
