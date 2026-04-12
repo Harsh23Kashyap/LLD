@@ -90,11 +90,13 @@ Work through the sections below in order unless you are jumping back to review. 
 |--------|-------|:----:|
 | `01-exception-basics` | `try` / `catch` / `finally`, runtime exceptions | ✓ |
 
-### Supporting topics (same repo, later order)
+### Code structure (`08-code-structure/`)
 
 | Folder | Topic | Done |
 |--------|-------|:----:|
-| `08-code-structure` | Packages | |
+| `01-packages` | `package`, folders, `import`, classpath | ✓ |
+
+Java fundamentals folders tracked in this README are covered through **`08-code-structure`**.
 
 ---
 
