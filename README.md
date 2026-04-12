@@ -28,17 +28,17 @@ Numbered modules; each **leaf** folder is one lesson.
 | `07-concurrency` | Threads, pools, safety, deadlocks, locks, producer–consumer (+ supplement folder for extra PC material) |
 | `10-advanced-topics` | Exceptions / error handling, database design |
 
+Practice code for these lessons is not in the repo yet (folders are a scaffold aligned with typical course titles).
+
 ---
 
 ## Java fundamentals (`java-fundamentals/`)
 
-Study order follows folder numbering (OOP first, then interfaces, collections, and supporting topics).
+Work through the sections below in order unless you are jumping back to review. In each table, **Folder** is relative to that section’s path (for example, under **OOP basics**, `01-classes-and-objects` is `java-fundamentals/01-oop-basics/01-classes-and-objects/`). Lesson code and `run.sh` sit inside that leaf folder when present.
 
-### Progress
+### OOP basics (`01-oop-basics/`)
 
-**`01-oop-basics` (OOP)**
-
-| Lesson | Topic | Done |
+| Folder | Topic | Done |
 |--------|-------|:----:|
 | `01-classes-and-objects` | Classes & objects | ✓ |
 | `02-constructors` | Constructors | ✓ |
@@ -46,25 +46,33 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 | `04-inheritance` | Inheritance | ✓ |
 | `05-polymorphism` | Polymorphism | ✓ |
 | `06-abstraction` | Abstraction (`abstract`, `interface`) | ✓ |
-| `07-try-it-yourself` | Session 1 mini exercise (see folder `README.md`) | ✓ |
+| `07-try-it-yourself` | Session 1 capstone (skeletons; tasks in each `.java` header) | ✓ |
 
-**Other `java-fundamentals` modules**
+### Interfaces (`02-interfaces/`)
 
-| Module | Topics | Done |
-|--------|--------|:----:|
-| `02-interfaces` | `implements`, multiple interfaces | ✓ |
-| `02-interfaces/02-practice` | Interfaces mini exercise (`02-practice/README.md`) | ✓ |
-| `03-collections` | List / `ArrayList`, Map / `HashMap`, Set / `HashSet` | ✓ |
-| `03-collections/01-list-and-arraylist` | List / `ArrayList` | ✓ |
-| `03-collections/02-map-and-hashmap` | Map / `HashMap` | ✓ |
-| `03-collections/03-set-and-hashset` | Set / `HashSet` | ✓ |
-| `04-enums` | Fixed states / types | |
-| `05-access-control` | `private`, `public`, `protected` | |
-| `06-design-thinking` | Composition vs inheritance (HAS-A vs IS-A) | |
-| `07-error-handling` | `try` / `catch` basics | |
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `01-interface-usage` | `implements`, multiple interfaces on one class | ✓ |
+| `02-practice` | Short exercise (skeletons; tasks in each `.java` header) | ✓ |
+
+### Collections (`03-collections/`)
+
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `01-list-and-arraylist` | `List`, `ArrayList`, iteration | ✓ |
+| `02-map-and-hashmap` | `Map`, `HashMap`, `LinkedHashMap`, `TreeMap` | ✓ |
+| `03-set-and-hashset` | `Set`, `HashSet`, `LinkedHashSet`, `TreeSet` | ✓ |
+| `04-module-final` | Module capstone (list + map + set; tasks in each `.java` header) | ✓ |
+
+### Supporting topics (same repo, later order)
+
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `04-enums` | Enums | |
+| `05-access-control` | Access modifiers | |
+| `06-design-thinking` | Composition vs inheritance | |
+| `07-error-handling` | Exceptions (`try` / `catch`) | |
 | `08-code-structure` | Packages | |
-
-**`lld-course/`** — lesson exercises not started yet (directory layout only; no ✓ here until you add code per topic).
 
 ---
 
