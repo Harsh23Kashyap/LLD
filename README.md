@@ -55,6 +55,7 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 | `02-interfaces` | `implements`, multiple interfaces | ✓ |
 | `02-interfaces/02-practice` | Interfaces mini exercise (`02-practice/README.md`) | ✓ |
 | `03-collections` | List / `ArrayList`, Map / `HashMap`, Set / `HashSet` | |
+| `03-collections/01-list-and-arraylist` | List / `ArrayList` | ✓ |
 | `04-enums` | Fixed states / types | |
 | `05-access-control` | `private`, `public`, `protected` | |
 | `06-design-thinking` | Composition vs inheritance (HAS-A vs IS-A) | |
