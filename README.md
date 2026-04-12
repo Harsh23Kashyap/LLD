@@ -71,11 +71,16 @@ Work through the sections below in order unless you are jumping back to review. 
 | `01-enums` | Enum type, constants, fields, `values`, `valueOf`, `switch` | ✓ |
 | `02-practice` | Short exercise (`ChipColor` / `ChipPracticeApp`; tasks in each `.java` header) | ✓ |
 
+### Access control (`05-access-control/`)
+
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `01-access-modifiers` | `private`, package-private, `protected`, `public` | ✓ |
+
 ### Supporting topics (same repo, later order)
 
 | Folder | Topic | Done |
 |--------|-------|:----:|
-| `05-access-control` | Access modifiers | |
 | `06-design-thinking` | Composition vs inheritance | |
 | `07-error-handling` | Exceptions (`try` / `catch`) | |
 | `08-code-structure` | Packages | |
