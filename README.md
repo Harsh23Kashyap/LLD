@@ -64,11 +64,16 @@ Work through the sections below in order unless you are jumping back to review. 
 | `03-set-and-hashset` | `Set`, `HashSet`, `LinkedHashSet`, `TreeSet` | ✓ |
 | `04-module-final` | Module capstone (list + map + set; tasks in each `.java` header) | ✓ |
 
+### Enums (`04-enums/`)
+
+| Folder | Topic | Done |
+|--------|-------|:----:|
+| `01-enums` | Enum type, constants, fields, `values`, `valueOf`, `switch` | ✓ |
+
 ### Supporting topics (same repo, later order)
 
 | Folder | Topic | Done |
 |--------|-------|:----:|
-| `04-enums` | Enums | |
 | `05-access-control` | Access modifiers | |
 | `06-design-thinking` | Composition vs inheritance | |
 | `07-error-handling` | Exceptions (`try` / `catch`) | |
