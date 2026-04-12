@@ -46,6 +46,7 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 | `04-inheritance` | Inheritance | ✓ |
 | `05-polymorphism` | Polymorphism | ✓ |
 | `06-abstraction` | Abstraction (`abstract`, `interface`) | ✓ |
+| `07-try-it-yourself` | Session 1 mini exercise (see folder `README.md`) | ✓ |
 
 **Other `java-fundamentals` modules**
 
