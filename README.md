@@ -53,6 +53,7 @@ Study order follows folder numbering (OOP first, then interfaces, collections, a
 | Module | Topics | Done |
 |--------|--------|:----:|
 | `02-interfaces` | `implements`, multiple interfaces | ✓ |
+| `02-interfaces/02-practice` | Interfaces mini exercise (`02-practice/README.md`) | ✓ |
 | `03-collections` | List / `ArrayList`, Map / `HashMap`, Set / `HashSet` | |
 | `04-enums` | Fixed states / types | |
 | `05-access-control` | `private`, `public`, `protected` | |
