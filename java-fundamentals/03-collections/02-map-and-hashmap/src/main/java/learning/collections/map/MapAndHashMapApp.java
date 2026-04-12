@@ -14,6 +14,10 @@ import java.util.TreeMap;
  * behavior but differ in how entries are stored and in what order entrySet() / keySet()
  * visits keys when you iterate.
  *
+ * In C++, HashMap will be like unordered_map<K, V>.
+ * In C++, LinkedHashMap will be like nothing. Nothing based on insertion order.
+ * In C++, TreeMap will be like map<K, V> sorted by keys.
+ *
  * HashMap — backing store is a hash table (buckets). Average-case O(1) get and put. Iteration
  * order is not specified and can change if the table resizes or between JVM runs. Use it when
  * you only care about fast lookup by key, not order.
