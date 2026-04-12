@@ -23,6 +23,24 @@ public final class ListAndArrayListApp {
     }
 
     public static void main(String[] args) {
+        // Double example
+        List<Double> prices = new ArrayList<>();
+        prices.add(1.99);
+        prices.add(2.99);
+        prices.add(3.99);
+
+        System.out.println("size=" + prices.size());
+        System.out.println("get(0)=" + prices.get(0));
+
+        prices.set(1, 2.50);
+        double total = 0;
+        for (double price : prices) {
+            total += price;
+        }
+        System.out.println("total=" + total);
+
+
+        // String example
         List<String> basket = new ArrayList<>();
         basket.add("apple");
         basket.add("banana");
