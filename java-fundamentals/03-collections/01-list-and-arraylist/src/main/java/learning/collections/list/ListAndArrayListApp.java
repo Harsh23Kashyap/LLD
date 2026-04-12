@@ -28,6 +28,7 @@ public final class ListAndArrayListApp {
         prices.add(1.99);
         prices.add(2.99);
         prices.add(3.99);
+        prices.remove(2);
 
         System.out.println("size=" + prices.size());
         System.out.println("get(0)=" + prices.get(0));
