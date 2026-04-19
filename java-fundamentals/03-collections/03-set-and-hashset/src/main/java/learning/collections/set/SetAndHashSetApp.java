@@ -78,5 +78,13 @@ public final class SetAndHashSetApp {
         tree.add("alpha");
         tree.add("beta");
         printSet("TreeSet (sorted keys)", tree);
+
+    // Loop through a set using for-each and print each element
+    System.out.println();
+    System.out.println("Looping through TreeSet:");
+    for (String tag : tree) {
+        System.out.print("  " + tag);
+    }
+    System.out.println();
     }
 }
