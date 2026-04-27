@@ -28,6 +28,7 @@
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.time.Duration;
 
 public class Main {
 
@@ -65,11 +66,6 @@ public class Main {
         }
     }
 
-    static enum paymentType {
-        CASH,
-        CREDIT_CARD,
-        UPI;
-    }
     //implement parking spot
     static class ParkingSpot {
         private final int spotId;
@@ -134,7 +130,7 @@ public class Main {
         private final LocalDateTime entryTime;
         private LocalDateTime exitTime;
         private final ParkingFeeCalculator parkingStrategy;
-        private paymentType paymentType;
+        private PaymentProcessor paymentProcessor;
         
         private Double feePaid ;
         public Ticket(ParkingSpot parkingSpot, Vehicle vehicle, ParkingFeeCalculator parkingFeeCalculator) {
@@ -145,7 +141,7 @@ public class Main {
             this.exitTime = null;
             this.feePaid = null;
             this.parkingStrategy = parkingFeeCalculator;
-            this.paymentType = null;
+            this.paymentProcessor = null;
         }
 
         public String getTicketId() {
@@ -171,11 +167,11 @@ public class Main {
             return feePaid;
         }
 
-        public String getEntryTime() {
-            return entryTime.toString();
+        public LocalDateTime getEntryTime() {
+            return entryTime;
         }
-        public String getExitTime() {
-            return exitTime == null ? null : exitTime.toString();
+        public LocalDateTime getExitTime() {
+            return exitTime == null ? null : exitTime;
         }
         public Double getFeePaid() {
             return feePaid;
@@ -184,11 +180,11 @@ public class Main {
         public ParkingFeeCalculator getParkingStrategy() {
             return parkingStrategy;
         }
-        public void setPaymentType(paymentType paymentType) {
-            this.paymentType = paymentType;
+        public void setPaymentProcessor(PaymentProcessor paymentProcessor) {
+            this.paymentProcessor = paymentProcessor;
         }
-        public paymentType getPaymentType() {
-            return paymentType;
+        public PaymentProcessor getPaymentProcessor() {
+            return paymentProcessor;
         }
     }
 
@@ -248,13 +244,16 @@ public class Main {
     static class smallVehicleParkingFeeCalculator implements ParkingFeeCalculator {
         @Override
         public Double calculateParkingFee(Ticket ticket) {
-            return ticket.getParkingSpot().getSpotType().getSize() *    10.0;
+            long time = java.time.Duration.between(ticket.getEntryTime(), ticket.getExitTime()).toMinutes();
+       
+            return ticket.getParkingSpot().getSpotType().getSize() *    10.0 * time;
         }
     }
 
     static class mediumVehicleParkingFeeCalculator implements ParkingFeeCalculator {
         @Override
         public Double calculateParkingFee(Ticket ticket) {
+            long time = java.time.Duration.between(ticket.getEntryTime(), ticket.getExitTime()).toMinutes();
             return ticket.getParkingSpot().getSpotType().getSize() *    20.0;
         }
     }
@@ -262,7 +261,8 @@ public class Main {
     static class largeVehicleParkingFeeCalculator implements ParkingFeeCalculator {
         @Override
         public Double calculateParkingFee(Ticket ticket) {
-            return ticket.getParkingSpot().getSpotType().getSize() *    30.0;
+            long time = java.time.Duration.between(ticket.getEntryTime(), ticket.getExitTime()).toMinutes();
+            return ticket.getParkingSpot().getSpotType().getSize() *    30.0 * time;   
         }
     }
 
@@ -283,7 +283,27 @@ public class Main {
             return null;
         }
     }
-
+    interface PaymentProcessor {
+        void processPayment(Ticket ticket);
+    }
+    static class CashPaymentProcessor implements PaymentProcessor {
+        @Override
+        public void processPayment(Ticket ticket) {
+            System.out.println("Cash Payment processed successfully");
+        }
+    }
+    static class CreditCardPaymentProcessor implements PaymentProcessor {
+        @Override
+        public void processPayment(Ticket ticket) {
+            System.out.println("Credit Card Payment processed successfully");
+        }
+    }
+    static class UPIPaymentProcessor implements PaymentProcessor {
+        @Override
+        public void processPayment(Ticket ticket) {
+            System.out.println("UPI Payment processed successfully");
+        }
+    }
     static class BestFitStrategy implements ParkingStrategy {
         @Override
         public ParkingSpot findAvailableSpot(ParkingLot parkingLot, Vehicle vehicle) {
@@ -339,24 +359,27 @@ public class Main {
         }
 
        static private void printTicket(Ticket ticket) {
+           System.out.println("--------------------------------");
             System.out.println("Ticket ID: " + ticket.getTicketId());
             System.out.println("Parking Spot ID: " + ticket.getParkingSpot().getSpotId());
             System.out.println("Vehicle ID: " + ticket.getVehicle().getVehicleId());
-            System.out.println("Entry Time: " + ticket.getEntryTime());
-            System.out.println("Exit Time: " + ticket.getExitTime());
+            System.out.println("Entry Time: " + ticket.getEntryTime().toString());
+            System.out.println("Exit Time: " + ticket.getExitTime().toString());
             System.out.println("Fee Paid: " + ticket.getFeePaid());
-            System.out.println("Payment Type: " + ticket.getPaymentType());
+            System.out.println("Payment Type: " + ticket.getPaymentProcessor());
+            System.out.println("--------------------------------");
         }
-        static private void calculateParkingFee(Ticket ticket, paymentType paymentType) { 
+        static private void calculateParkingFee(Ticket ticket, PaymentProcessor paymentProcessor) { 
             ticket.setExitTime();
-            ticket.setPaymentType(paymentType);
+            ticket.setPaymentProcessor(paymentProcessor);
+            paymentProcessor.processPayment(ticket);
             Double parkingFee = ticket.getParkingStrategy().calculateParkingFee(ticket);
             ticket.setFeePaid(parkingFee);
             printTicket(ticket);
         }
 
-        public void unparkVehicle(Ticket ticket, paymentType paymentType) {
-            calculateParkingFee(ticket, paymentType);
+        public void unparkVehicle(Ticket ticket, PaymentProcessor paymentProcessor) {
+            calculateParkingFee(ticket, paymentProcessor);
             ParkingSpot parkingSpot = ticket.getParkingSpot();
             ticketsMap.remove(ticket.getTicketId());
             parkingSpot.freeSpot(true);
@@ -383,23 +406,23 @@ public class Main {
         Ticket ticket5 = parkingLotManager.parkVehicle(new Vehicle(5, vehicleType.BIKE, "BIKE54321"));
         Ticket ticket6 = parkingLotManager.parkVehicle(new Vehicle(6, vehicleType.CAR, "CAR11223"));
         if (ticket1 != null) {
-            parkingLotManager.unparkVehicle(ticket1, paymentType.CASH);
+            parkingLotManager.unparkVehicle(ticket1, new CashPaymentProcessor());
         }
         if (ticket2 != null) {
-            parkingLotManager.unparkVehicle(ticket2, paymentType.CREDIT_CARD);
+            parkingLotManager.unparkVehicle(ticket2, new CreditCardPaymentProcessor());
         }
         if (ticket3 != null) {
         parkingLotManager.parkVehicle(new Vehicle(2, vehicleType.BIKE, "BIKE12345"));
-            parkingLotManager.unparkVehicle(ticket3, paymentType.UPI);
+            parkingLotManager.unparkVehicle(ticket3, new UPIPaymentProcessor());
         }
         if (ticket4 != null) {
-            parkingLotManager.unparkVehicle(ticket4, paymentType.CASH);
+            parkingLotManager.unparkVehicle(ticket4, new CashPaymentProcessor());
         }
         if (ticket5 != null) {
-            parkingLotManager.unparkVehicle(ticket5, paymentType.CREDIT_CARD);
+            parkingLotManager.unparkVehicle(ticket5, new CreditCardPaymentProcessor());
         }
         if (ticket6 != null) {
-            parkingLotManager.unparkVehicle(ticket6, paymentType.UPI);
+            parkingLotManager.unparkVehicle(ticket6, new UPIPaymentProcessor());
         }
     }
 }
