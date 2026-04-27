@@ -90,13 +90,13 @@ public class Main {
             return isAvailable;
         }
 
-        public void freeSpot(boolean isAvailable) {
-            this.isAvailable = isAvailable;
+        public void freeSpot() {
+            this.isAvailable = true;
         }
-
-        public void parkVehicle() {
+        public void occupySpot() {
             this.isAvailable = false;
         }
+
     }
 
     static class Vehicle {
@@ -254,7 +254,7 @@ public class Main {
         @Override
         public Double calculateParkingFee(Ticket ticket) {
             long time = java.time.Duration.between(ticket.getEntryTime(), ticket.getExitTime()).toMinutes();
-            return ticket.getParkingSpot().getSpotType().getSize() *    20.0;
+            return ticket.getParkingSpot().getSpotType().getSize() *    20.0 * time;
         }
     }
 
@@ -334,8 +334,8 @@ public class Main {
         }
         public Ticket parkVehicle(Vehicle vehicle) {
             ParkingSpot spot = parkingStrategy.findAvailableSpot(parkingLot, vehicle);
-            if (spot != null) {
-                spot.parkVehicle();
+            if (spot != null) { 
+                spot.occupySpot();
                 Ticket ticket = new Ticket(spot, vehicle, getParkingFeeCalculator(spot.getSpotType()));
                 ticketsMap.put(ticket.getTicketId(), ticket);
                 System.out.println("Vehicle parked successfully");
@@ -382,7 +382,7 @@ public class Main {
             calculateParkingFee(ticket, paymentProcessor);
             ParkingSpot parkingSpot = ticket.getParkingSpot();
             ticketsMap.remove(ticket.getTicketId());
-            parkingSpot.freeSpot(true);
+            parkingSpot.freeSpot();
             System.out.println("Vehicle unparked successfully");
         }
     }
